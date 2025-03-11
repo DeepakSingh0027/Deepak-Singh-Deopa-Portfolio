@@ -1,20 +1,23 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/home";
+import Home from "./Pages/Home/home";
 import Header from "./header/header";
+import { ThemeProvider } from "./Context/themeContext";
 function App() {
   return (
-    <Routes>
-      <Route
-        path=""
-        element={
-          <>
-            <Header />
-            <Home />
-          </>
-        }
-      />
-    </Routes>
+    <ThemeProvider>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Home />
+            </>
+          }
+        />
+      </Routes>
+    </ThemeProvider>
   );
 }
 

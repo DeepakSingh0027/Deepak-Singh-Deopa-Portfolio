@@ -1,9 +1,7 @@
 @import "tailwindcss";
 body {
-  margin-left: 150px;
-  margin-right: 150px;
-
-  background-color: black;
-
+  margin-left: 130px;
+  margin-right: 130px;
+  background-color: #060403;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

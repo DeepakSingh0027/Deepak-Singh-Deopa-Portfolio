@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ThemeContext } from "../Context/themeContext";
 import "./ShinyText.css";
 
 const ShinyText = ({ text, disabled = false, speed = 5, className = "" }) => {
