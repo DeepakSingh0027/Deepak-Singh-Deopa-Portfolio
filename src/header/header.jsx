@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <div
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50  ${
-        theme === "light" ? "bg-[#f5fffa]/70" : "bg-[#060403]/70"
+        theme === "light" ? "bg-[#f5fffa]/70" : "bg-[#1e1e1e]/70"
       } rounded-3xl flex items-center p-2 transition-all duration-300 ${
         isScrolled ? "w-[300px] px-4" : "w-[calc(100vw-260px)] px-10 shadow-md"
       }`}
@@ -44,12 +44,12 @@ const Header = () => {
       </Link>
 
       {/* Center Links */}
-      <div className="flex-grow flex justify-center space-x-6 transition-all duration-300">
+      <div className="flex-grow flex justify-center space-x-8 transition-all duration-300">
         <Link className="flex items-center space-x-2">
           {position === "home" && (
             <Star
               className={`w-3 h-3 fill-current ${
-                theme === "dark" ? "text-[#f0ec02]" : "text-[#060403]"
+                theme === "dark" ? "text-[#f00202dc]" : "text-[#05b9e6e8]"
               }`}
             />
           )}
@@ -67,7 +67,7 @@ const Header = () => {
                   : `${
                       position === "home" ? "text-[#060403]" : "text-[#2e2e2e]"
                     } hover:text-teal-600 bg-[linear-gradient(120deg,rgb(255,0,0)_40%,rgba(223,206,15,0.8)_50%,rgba(0,255,4,0.953)_60%)]`
-              }`}
+              } `}
           />
         </Link>
         <Link className="flex items-center space-x-2">

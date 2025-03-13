@@ -11,49 +11,53 @@ const Home = () => {
   const sayHello = () => {
     setHello(!isHello);
   };
+  const handleAnimationComplete = () => {
+    console.log("Animation completed!");
+  };
   useEffect(() => {
     setPos("home");
   }, []);
   return (
-    <div className="mt-36 px-10">
+    <div className="mt-42 px-10">
       <div>
         <div>
           <div className="flex space-x-3 justify-center">
             {isHello ? (
-              <ThumbsUp
-                onClick={sayHello}
-                className="cursor-pointer w-7 h-7 text-green-500"
-              />
+              <ThumbsUp className="cursor-pointer w-7 h-7 text-green-500 animate-thumb" />
             ) : (
               <Hand
                 onClick={sayHello}
                 className={`cursor-pointer w-7 h-7 ${
-                  theme === "light" ? "text-[#ff67cf]" : "text-[#c8f000e0]"
+                  theme === "light" ? "text-[#05b9e6e8]" : "text-[#d30808e0]"
                 } animate-wave`}
               />
             )}
-
-            <TrueFocus
-              sentence="HeyThere! Welcome."
-              manualMode={true}
-              blurAmount={5}
-              borderColor={`${theme === "light" ? "purple" : "cyan"}`}
-              animationDuration={2}
-              pauseBetweenAnimations={1}
-            />
+            {isHello ? (
+              <BlurText
+                text="Welcome."
+                delay={60}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className={`${
+                  theme === "light" ? "text-[#2e2e2e]" : "text-[#FFFFF0]"
+                } text-2xl mb-8 `}
+              />
+            ) : (
+              <BlurText
+                text="Hey!"
+                delay={60}
+                animateBy="letters"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className={`${
+                  theme === "light" ? "text-[#2e2e2e]" : "text-[#FFFFF0]"
+                } text-2xl mb-8`}
+              />
+            )}
           </div>
-          <div className="flex justify-center ">
-            <BlurText
-              text="I'm Deepak Singh Deopa, a passionate software engineer and B.Tech student dedicated to building efficient, scalable, and real-world solutions. From designing full-stack applications to implementing machine learning models, I love turning complex problems into simple, elegant solutions."
-              delay={150}
-              animateBy="words"
-              direction="top"
-              onAnimationComplete={null}
-              className={`text-[${
-                theme === "light" ? "#060403" : "#f5fffa"
-              }] text-lg py-8 px-8`}
-            />
-          </div>
+          <div className="flex space-x-3 justify-center"></div>
+          <div className="flex justify-center "></div>
 
           <div className="text-[#f5fffa]"></div>
         </div>

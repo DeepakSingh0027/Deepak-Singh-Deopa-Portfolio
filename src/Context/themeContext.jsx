@@ -12,7 +12,7 @@ export const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
     if (theme === "light") {
-      document.body.style = "background-color:#060403";
+      document.body.style = "background-color:#1e1e1e";
     } else {
       document.body.style = "background-color:#f5fffa";
     }
