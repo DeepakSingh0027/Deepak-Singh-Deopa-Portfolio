@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Sun, Moon, Star } from "lucide-react";
 import ShinyText from "../animations/ShinyText";
 import { ThemeContext } from "../Context/themeContext";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,11 +24,15 @@ const Header = () => {
   }, []);
 
   return (
-    <div
+    <motion.div
+      initial={{ y: 50 }}
+      whileInView={{ y: 0 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      viewport={{ amount: 0.5 }}
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50  ${
-        theme === "light" ? "bg-[#f5fffa]/70" : "bg-[#1e1e1e]/70"
+        theme === "light" ? "bg-[#f5fffaea]/90" : "bg-[#050301ea]/90"
       } rounded-3xl flex items-center p-2 transition-all duration-300 ${
-        isScrolled ? "w-[300px] px-4" : "w-[calc(100vw-260px)] px-10 shadow-md"
+        isScrolled ? "w-[600px] px-4" : "w-[calc(100vw-260px)] px-4 shadow-md"
       }`}
     >
       {/* "DD" on the left */}
@@ -166,7 +171,7 @@ const Header = () => {
       >
         {theme === "light" ? <Moon size={22} /> : <Sun size={22} />}
       </button>
-    </div>
+    </motion.div>
   );
 };
 

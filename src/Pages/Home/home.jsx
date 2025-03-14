@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { Hand, ThumbsUp } from "lucide-react";
 import BlurText from "./../../animations/BlurText";
 import TrueFocus from "./../../animations/TrueFocus";
+import GradientText from "../../animations/GradientText";
+import { Sparkles } from "lucide-react";
 
 const Home = () => {
   const [isHello, setHello] = useState(false);
@@ -63,7 +65,7 @@ const Home = () => {
             {/* First Line (Text Moves Left) */}
             <div className="relative mb-4">
               <motion.p
-                initial={{ x: 100, opacity: 0 }}
+                initial={{ x: 200, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeInOut" }}
                 viewport={{ amount: 0.5 }}
@@ -71,10 +73,13 @@ const Home = () => {
                   theme === "light" ? "text-[#b1b1b1]" : "text-[#FFFFF0]"
                 }`}
               >
-                Turning <span className="text-red-500">Ideas</span>
+                Turning{" "}
+                <span className="bg-gradient-to-r from-[#f12711f3] via-[#f70707f4] via-[#911b1bea] to-[#bf5e18] ideas">
+                  Ideas
+                </span>
               </motion.p>
               <div
-                className={`absolute inset-0 -z-10 top-1/2 h-0.5 w-full ${
+                className={`absolute inset-0 mt-1 -z-10 top-1/2 h-0.5 w-full ${
                   theme === "light" ? "bg-gray-800" : "bg-gray-400"
                 }`}
               ></div>
@@ -91,7 +96,9 @@ const Home = () => {
                   theme === "light" ? "text-[#b1b1b1]" : "text-[#FFFFF0]"
                 }`}
               >
-                Into
+                <span className="bg-gradient-to-r from-[#f6f5f5f3] via-[#FFFFF0] via-[#a4a49e] to-[#787877] ideas">
+                  Into
+                </span>
               </motion.p>
               <div
                 className={`absolute inset-0 mt-4 top-1/2 h-0.5 w-full ${
@@ -103,7 +110,7 @@ const Home = () => {
             {/* Third Line (Text Moves Right) */}
             <div className="relative pt-6 flex justify-end">
               <motion.p
-                initial={{ x: -100, opacity: 0 }}
+                initial={{ x: -200, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeInOut" }}
                 viewport={{ amount: 0.5 }}
@@ -111,7 +118,10 @@ const Home = () => {
                   theme === "light" ? "text-[#b1b1b1]" : "text-[#FFFFF0]"
                 }`}
               >
-                <span className="text-red-500">Scalable</span> Solutions.
+                <span className="bg-gradient-to-r from-[#f12711f3] via-[#f70707f4] via-[#911b1bea] to-[#bf5e18] ideas">
+                  Scalable
+                </span>{" "}
+                Solutions.
               </motion.p>
               <div
                 className={`absolute inset-0 mt-4 top-1/2 h-0.5 w-full ${
@@ -121,8 +131,31 @@ const Home = () => {
             </div>
           </div>
         </div>
-
         {/*About Me*/}
+        <div className="items-center mt-32 ">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            viewport={0.5}
+            className={`flex items-center space-x-1 text-xl ml-20  `}
+          >
+            <Sparkles
+              className={`${
+                theme === "light" ? "text-[#100ddf]" : "text-[#da0707]"
+              } animate-zoom`}
+            />
+            <p
+              className={`${
+                theme === "light"
+                  ? "bg-gradient-to-r from-[#100ddf] via-[#4827b4] via-[#000000] via-[#5220b6] to-[#0b95bb] ideas "
+                  : " bg-gradient-to-r from-[#f3897f] via-[#c62525] via-[#f5fffa] via-[#dd0f0f] to-[#da0707] ideas"
+              }`}
+            >
+              About Me
+            </p>
+          </motion.div>
+        </div>
         <div></div>
       </div>
     </div>
