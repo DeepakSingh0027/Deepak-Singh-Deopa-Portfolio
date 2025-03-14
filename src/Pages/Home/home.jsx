@@ -155,6 +155,14 @@ const Home = () => {
               About Me
             </p>
           </motion.div>
+          <p>
+            Hey there! 👋 I'm [Your Name], a passionate software engineer and
+            B.Tech student who loves transforming innovative ideas into
+            functional, efficient, and scalable solutions. Whether it's building
+            a high-performance web application, crafting intelligent machine
+            learning models, or optimizing systems, I thrive on challenges that
+            push me beyond my limits.
+          </p>
         </div>
         <div></div>
       </div>

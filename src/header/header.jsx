@@ -29,7 +29,7 @@ const Header = () => {
       whileInView={{ y: 0 }}
       transition={{ duration: 1, ease: "easeInOut" }}
       viewport={{ amount: 0.5 }}
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50  ${
+      className={`fixed  top-4 left-1/2 -translate-x-1/2 z-50  ${
         theme === "light" ? "bg-[#f5fffaea]/90" : "bg-[#050301ea]/90"
       } rounded-3xl flex items-center p-2 transition-all duration-300 ${
         isScrolled ? "w-[600px] px-4" : "w-[calc(100vw-260px)] px-4 shadow-md"
@@ -162,14 +162,15 @@ const Header = () => {
 
       {/* Sunlight Icon on the Right */}
       <button
-        className={`mr-auto ${
-          theme === "light"
-            ? " text-[#060403] hover:text-[#ff67cf]"
-            : " text-[#f5fffa] hover:text-[#a7ff74]"
-        } cursor-pointer `}
+        className={`w-7 h-7 p-0 flex items-center justify-center rounded-full transition-all duration-300
+    ${
+      theme === "light"
+        ? "text-[#060403] hover:text-[#ff67cf] hover:shadow-[4px_4px_20px_#000000,inset_-6px_-6px_20px_#fff] active:shadow-[inset_6px_6px_12px_#000000,inset_-6px_-6px_12px_#ffffff] "
+        : "text-[#f5fffa] hover:text-[#a7ff74] hover:shadow-[4px_4px_20px_#ffffff1a,inset_-6px_-6px_20px_#fff] active:shadow-[inset_6px_6px_12px_#ffffff1a,inset_-6px_-6px_12px_#000000]]"
+    } cursor-pointer`}
         onClick={toggleTheme}
       >
-        {theme === "light" ? <Moon size={22} /> : <Sun size={22} />}
+        {theme === "light" ? <Sun size={18} /> : <Moon size={18} />}
       </button>
     </motion.div>
   );
