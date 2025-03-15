@@ -44,12 +44,15 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   });
 
   return (
-    <div className="">
-      <motion.div className="" style={{ x }}>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
+    <div className="absolute left-0 overflow-hidden w-screen mx-0 tracking-tighter leading-none mt-5 whitespace-nowrap flex flex-nowrap">
+      <motion.div
+        className="font-semibold uppercase text-[64px] flex whitespace-nowrap flex-nowrap"
+        style={{ x }}
+      >
+        <span className="flex mr-[30px] space-x-5">{children} </span>
+        <span className="flex mr-[30px] space-x-5">{children} </span>
+        <span className="flex mr-[30px] space-x-5">{children} </span>
+        <span className="flex mr-[30px] space-x-5">{children} </span>
       </motion.div>
     </div>
   );

@@ -29,7 +29,7 @@ const Header = () => {
       whileInView={{ y: 0 }}
       transition={{ duration: 1, ease: "easeInOut" }}
       viewport={{ amount: 0.5 }}
-      className={`fixed  top-4 left-1/2 -translate-x-1/2 z-50  ${
+      className={` fixed  top-4 left-1/2 -translate-x-1/2 z-50  ${
         theme === "light" ? "bg-[#f5fffaea]/90" : "bg-[#050301ea]/90"
       } rounded-3xl flex items-center p-2 transition-all duration-300 ${
         isScrolled ? "w-[600px] px-4" : "w-[calc(100vw-260px)] px-4 shadow-md"

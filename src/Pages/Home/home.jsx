@@ -7,6 +7,14 @@ import BlurText from "./../../animations/BlurText";
 import TrueFocus from "./../../animations/TrueFocus";
 import GradientText from "../../animations/GradientText";
 import { Sparkles } from "lucide-react";
+import ParallaxText from "../../animations/ParallaxText";
+import { Ribbon } from "lucide-react";
+import { TreePalm } from "lucide-react";
+import { Flame } from "lucide-react";
+import { DraftingCompass } from "lucide-react";
+import { Fingerprint } from "lucide-react";
+import { Codesandbox } from "lucide-react";
+import { LeafyGreen } from "lucide-react";
 
 const Home = () => {
   const [isHello, setHello] = useState(false);
@@ -21,7 +29,7 @@ const Home = () => {
     setPos("home");
   }, []);
   return (
-    <div className="mt-42 px-10">
+    <div className="mt-42  px-10">
       <div>
         <div>
           {/*Hey text */}
@@ -131,14 +139,65 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/*Seperator*/}
+        <div className="items-center text-3xl font-bold mt-34 parallax-text">
+          <div className="absolute left-0 w-screen mx-0 border-t border-gray-400 pb-5"></div>
+          <ParallaxText baseVelocity={3}>
+            <span
+              className={`${
+                theme === "light" ? "text-[#0c7ab1ec]" : "text-[#a30c0cec]"
+              }`}
+            >
+              Developer
+            </span>{" "}
+            <Ribbon
+              size={60}
+              color={`${theme === "light" ? "#2e2e2e" : "#f5fffa"}`}
+            />
+            <span
+              className={`${
+                theme === "light" ? "text-[#0c7ab1ec]" : "text-[#a30c0cec]"
+              }`}
+            >
+              Designer
+            </span>{" "}
+            <TreePalm
+              size={60}
+              color={`${theme === "light" ? "#2e2e2e" : "#f5fffa"}`}
+            />
+            <span
+              className={`${
+                theme === "light" ? "text-[#0c7ab1ec]" : "text-[#a30c0cec]"
+              }`}
+            >
+              Solutionist
+            </span>{" "}
+            <Flame
+              size={60}
+              color={`${theme === "light" ? "#2e2e2e" : "#f5fffa"}`}
+            />
+            <span
+              className={`${
+                theme === "light" ? "text-[#0c7ab1ec]" : "text-[#a30c0cec]"
+              }`}
+            >
+              Strategist
+            </span>{" "}
+            <DraftingCompass
+              color={`${theme === "light" ? "#2e2e2e" : "#f5fffa"}`}
+              size={60}
+            />
+          </ParallaxText>
+          <div className="absolute left-0 w-screen mx-0 border-t border-gray-400 mt-26"></div>
+        </div>
         {/*About Me*/}
-        <div className="items-center mt-32 ">
+        <div className="relative items-center mt-94 ">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
             viewport={0.5}
-            className={`flex items-center space-x-1 text-xl ml-20  `}
+            className={`flex justify-center items-center space-x-1 text-xl   `}
           >
             <Sparkles
               className={`${
@@ -155,16 +214,79 @@ const Home = () => {
               About Me
             </p>
           </motion.div>
-          <p>
-            Hey there! 👋 I'm [Your Name], a passionate software engineer and
-            B.Tech student who loves transforming innovative ideas into
-            functional, efficient, and scalable solutions. Whether it's building
-            a high-performance web application, crafting intelligent machine
-            learning models, or optimizing systems, I thrive on challenges that
-            push me beyond my limits.
-          </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            viewport={{ amount: 0.9 }}
+            className={`text-2xl mt-3  text-center font-bold ${
+              theme === "light" ? "text-[#2e2e2e]" : "text-[#FFFFF0]"
+            }`}
+          >
+            Hey there! <span className="animate-wave">👋</span> I'm Deepak Singh
+            Deopa, a passionate software engineer and B.Tech student who loves
+            transforming innovative ideas into functional, efficient, and
+            scalable solutions.
+            <br /> Major Fields:
+          </motion.p>
         </div>
-        <div></div>
+        {/*Seperator*/}
+        <div className="items-center text-3xl font-bold mt-34 parallax-text">
+          <div className="absolute left-0 w-screen mx-0 border-t border-gray-400 pb-5"></div>
+          <ParallaxText baseVelocity={-2}>
+            <span
+              className={`${
+                theme === "light" ? "text-[#0c7ab1ec]" : "text-[#a30c0cec]"
+              }`}
+            >
+              FullStack Developer
+            </span>{" "}
+            <LeafyGreen
+              size={60}
+              color={`${theme === "light" ? "#2e2e2e" : "#f5fffa"}`}
+            />
+            <span
+              className={`${
+                theme === "light" ? "text-[#0c7ab1ec]" : "text-[#a30c0cec]"
+              }`}
+            >
+              Machine Learning & AI
+            </span>{" "}
+            <Fingerprint
+              size={60}
+              color={`${theme === "light" ? "#2e2e2e" : "#f5fffa"}`}
+            />
+            <span
+              className={`${
+                theme === "light" ? "text-[#0c7ab1ec]" : "text-[#a30c0cec]"
+              }`}
+            >
+              System Design & Optimization
+            </span>{" "}
+            <Codesandbox
+              size={60}
+              color={`${theme === "light" ? "#2e2e2e" : "#f5fffa"}`}
+            />
+          </ParallaxText>
+          <div className="absolute left-0 w-screen mx-0 border-t border-gray-400 mt-26"></div>
+        </div>
+        {/*About Me 2*/}
+        <div className="relative items-center mt-94 ">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            viewport={{ amount: 0.9 }}
+            className={`text-2xl mt-3  text-center font-bold ${
+              theme === "light" ? "text-[#2e2e2e]" : "text-[#FFFFF0]"
+            }`}
+          >
+            Whether it's building a high-performance web application, crafting
+            intelligent machine learning models, or optimizing systems, I thrive
+            on challenges that push me beyond my limits.
+          </motion.p>
+        </div>
+        <div className="mt-34"></div>
       </div>
     </div>
   );
