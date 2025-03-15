@@ -29,10 +29,14 @@ const Header = () => {
       whileInView={{ y: 0 }}
       transition={{ duration: 1, ease: "easeInOut" }}
       viewport={{ amount: 0.5 }}
-      className={` fixed  top-4 left-1/2 -translate-x-1/2 z-50  ${
-        theme === "light" ? "bg-[#f5fffaea]/90" : "bg-[#050301ea]/90"
+      className={` fixed top-4 left-1/2 -translate-x-1/2 z-50 backdrop-blur-lg ${
+        theme === "light" ? "bg-[#f5fffaea]/80" : "bg-[#050301ea]/80"
       } rounded-3xl flex items-center p-2 transition-all duration-300 ${
-        isScrolled ? "w-[600px] px-4" : "w-[calc(100vw-260px)] px-4 shadow-md"
+        isScrolled
+          ? `w-[600px] px-4  ${
+              theme === "light" ? " border-[#050301ea]" : "border-[#f5fffaea]"
+            }`
+          : "w-[calc(100vw-260px)] px-4"
       }`}
     >
       {/* "DD" on the left */}
@@ -71,7 +75,7 @@ const Header = () => {
                     }  hover:text-teal-300 bg-[linear-gradient(120deg,rgba(255,255,255,0)40%,rgba(255,255,255,0.8)50%,rgba(255,255,255,0)60%)]`
                   : `${
                       position === "home" ? "text-[#060403]" : "text-[#2e2e2e]"
-                    } hover:text-teal-600 bg-[linear-gradient(120deg,rgb(255,0,0)_40%,rgba(223,206,15,0.8)_50%,rgba(0,255,4,0.953)_60%)]`
+                    } hover:text-teal-600 bg-gradient-to-r from-yellow-400 via-white to-yellow-600`
               } `}
           />
         </Link>
@@ -96,7 +100,7 @@ const Header = () => {
                     }  hover:text-teal-300 bg-[linear-gradient(120deg,rgba(255,255,255,0)40%,rgba(255,255,255,0.8)50%,rgba(255,255,255,0)60%)]`
                   : `${
                       position === "about" ? "text-[#060403]" : "text-[#2e2e2e]"
-                    } hover:text-teal-600 bg-[linear-gradient(120deg,rgb(255,0,0)_40%,rgba(223,206,15,0.8)_50%,rgba(0,255,4,0.953)_60%)]`
+                    } hover:text-teal-600 bg-gradient-to-r from-yellow-400 via-white to-yellow-600`
               }`}
           />
         </Link>
@@ -125,7 +129,7 @@ const Header = () => {
                       position === "projects"
                         ? "text-[#060403]"
                         : "text-[#2e2e2e]"
-                    } hover:text-teal-600 bg-[linear-gradient(120deg,rgb(255,0,0)_40%,rgba(223,206,15,0.8)_50%,rgba(0,255,4,0.953)_60%)]`
+                    } hover:text-teal-600 bg-gradient-to-r from-yellow-400 via-white to-yellow-600`
               }`}
           />
         </Link>
@@ -154,7 +158,7 @@ const Header = () => {
                       position === "contact"
                         ? "text-[#060403]"
                         : "text-[#2e2e2e]"
-                    } hover:text-teal-600 bg-[linear-gradient(120deg,rgb(255,0,0)_40%,rgba(223,206,15,0.8)_50%,rgba(0,255,4,0.953)_60%)]`
+                    }  hover:text-teal-600 bg-gradient-to-r from-yellow-400 via-white to-yellow-600`
               }`}
           />
         </Link>

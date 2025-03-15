@@ -14,6 +14,7 @@ import { Flame } from "lucide-react";
 import { DraftingCompass } from "lucide-react";
 import { Fingerprint } from "lucide-react";
 import { Codesandbox } from "lucide-react";
+import { Languages } from "lucide-react";
 import { LeafyGreen } from "lucide-react";
 
 const Home = () => {
@@ -220,7 +221,7 @@ const Home = () => {
             transition={{ duration: 1, ease: "easeInOut" }}
             viewport={{ amount: 0.9 }}
             className={`text-2xl mt-3  text-center font-bold ${
-              theme === "light" ? "text-[#2e2e2e]" : "text-[#FFFFF0]"
+              theme === "light" ? "text-[#2e2e2e]" : "text-[#f0f8ffe2]"
             }`}
           >
             Hey there! <span className="animate-wave">👋</span> I'm Deepak Singh
@@ -278,7 +279,7 @@ const Home = () => {
             transition={{ duration: 1, ease: "easeInOut" }}
             viewport={{ amount: 0.9 }}
             className={`text-2xl mt-3  text-center font-bold ${
-              theme === "light" ? "text-[#2e2e2e]" : "text-[#FFFFF0]"
+              theme === "light" ? "text-[#2e2e2e]" : "text-[#f0f8ffe2]"
             }`}
           >
             Whether it's building a high-performance web application, crafting
@@ -286,7 +287,22 @@ const Home = () => {
             on challenges that push me beyond my limits.
           </motion.p>
         </div>
-        <div className="mt-34"></div>
+        <div className="mt-34 flex justify-center items-center space-x-2 text-xl  ">
+          <Languages
+            className={`${
+              theme === "light" ? "text-[#100ddf]" : "text-[#da0707]"
+            } animate-xoom `}
+          />
+          <p
+            className={`${
+              theme === "light"
+                ? "bg-gradient-to-r from-[#100ddf] via-[#4827b4] via-[#000000] via-[#5220b6] to-[#0b95bb] ideas "
+                : " bg-gradient-to-r from-[#f3897f] via-[#c62525] via-[#f5fffa] via-[#dd0f0f] to-[#da0707] ideas"
+            }`}
+          >
+            Programming Languages
+          </p>
+        </div>
       </div>
     </div>
   );
